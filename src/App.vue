@@ -27,21 +27,21 @@
     components: {Topbar, ResumeEditor, ResumePreview}
   }
 </script>
-<style>
+<style lang="scss">
   .page{
     height: 100vh;
     display: flex;
     flex-direction: column;
-  }
-  .page>main{
-    flex-grow: 1;
-  }
-  .page>main{
-    min-width: 1024px;
-    max-width: 1440px;
-    margin: 0;
-    display: flex;
-    justify-content: space-around;
+    >main{
+      flex-grow: 1;
+    }
+    >main{
+      min-width: 1024px;
+      max-width: 1440px;
+      margin: 0;
+      display: flex;
+      justify-content: space-around;
+    }
   }
   #resumeEditor{
     width: 35%;
