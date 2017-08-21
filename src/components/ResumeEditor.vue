@@ -6,7 +6,9 @@
             :class="{active: item === selected}"
             @click="selected = item"
         >
-          {{index}}
+          <svg class="icon" aria-hidden="true">
+            <use :xlink:href="`#icon-${icon_tags[index]}`"></use>
+          </svg>
         </li>
       </ol>
     </nav>
@@ -24,6 +26,7 @@
     data () {
       return {
         selected: 'personal_info',
+        icon_tags: ['Id', 'work', 'study', 'project', 'reward', 'Id', 'Id', 'Id'],
         resume: {
           displayItems: ['personal_info', 'work_history', 'education', 'projects', 'awards', 'contacts', 'others'],
           personal_info: {
@@ -46,18 +49,27 @@
 <style lang="scss">
   #resumeEditor{
     display: flex;
-
     > nav{
       width: 80px;
       > ol {
         > li{
+
           height: 48px;
           display: flex;
           justify-content: center;
           align-items: center;
+          .icon {
+            width: 2em;
+            height: 2em;
+            vertical-align: -0.15em;
+            fill: white;
+            overflow: hidden;
+          }
           &.active{
             background: white;
-            color: black;
+            .icon{
+              fill:black;
+            }
           }
         }
       }
