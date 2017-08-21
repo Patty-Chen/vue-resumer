@@ -17,6 +17,12 @@
   import ResumePreview from './components/ResumePreview'
   import 'normalize.css/normalize.css'
   import './assets/reset.css'
+  import Vue from 'vue'
+  import ElementUI from 'element-ui'
+  import 'element-ui/lib/theme-default/index.css'
+
+  Vue.use(ElementUI)
+
   export default {
     name: 'app',
     data: function () {
@@ -51,4 +57,5 @@
     width: 61.66667%;
     background: #777;
   }
+
 </style>

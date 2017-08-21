@@ -3,8 +3,8 @@
     <div class="wrapper">
       <span class="logo">Resumer</span>
       <div class="actions">
-        <button class="primary">保存</button>
-        <button>预览</button>
+        <el-button type="primary">保存</el-button>
+        <el-button>预览</el-button>
       </div>
     </div>
   </div>
@@ -35,21 +35,5 @@
       font-size: 24px;
       color: #000000;
     }
-  }
-  button{
-    width:72px;
-    height:26px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    background:#ddd;
-    color: #222;
-    &:hover{
-       box-shadow: 1px 1px 1px hsla(0, 0, 0, 0.50);
-     }
-    &.primary{
-       background:#02af5f;
-       color: white;
-     }
   }
 </style>
