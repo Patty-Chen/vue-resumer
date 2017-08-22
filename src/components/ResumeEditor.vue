@@ -14,7 +14,16 @@
     </nav>
     <ol class="panels">
       <li v-for="(item,index) in resume.displayItems" v-show="item === selected">
-        <div class="resumeField" v-for="(value,key) in resume[item]">
+        <div v-if="resume[item] instanceof(Array)">
+          <div class="subitem" v-for="subitem in resume[item]">
+            <div class="resumeField" v-for="(value,key) in subitem">
+              <label> {{key}} </label>
+              <input type="text" :value="value">
+            </div>
+            <hr>
+          </div>
+        </div>
+        <div v-else class="resumeField" v-for="(value,key) in resume[item]">
           <label> {{key}} </label>
           <input type="text" v-model="resume[item][key]">
         </div>
@@ -38,7 +47,11 @@
             city: '',
             title: ''
           },
-          work_history: ['test', 'test', 'test'],
+          work_history: [
+            {company: 'aaa', content: 'aaaaa'},
+            {company: 'bbb', content: 'bbbbb'},
+            {company: 'ccc', content: 'ccccc'}
+          ],
           education: ['test', 'test', 'test'],
           projects: ['test', 'test', 'test'],
           awards: [],
