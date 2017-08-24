@@ -11,14 +11,18 @@ export default new Vuex.Store({
       personal_info: {
         name: '',
         city: '',
-        title: ''
+        title: '',
+        birthday: ''
       },
       work_history: [
         {company: 'aaa', content: 'aaaaa'},
         {company: 'bbb', content: 'bbbbb'},
         {company: 'ccc', content: 'ccccc'}
       ],
-      education: ['test', 'test', 'test'],
+      education: [
+        {school: 'aaa', content: 'aaaaa'},
+        {school: 'bbb', content: 'bbbbb'}
+      ],
       projects: ['test', 'test', 'test'],
       awards: [],
       contacts: [],
