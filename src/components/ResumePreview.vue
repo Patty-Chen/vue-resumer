@@ -37,19 +37,67 @@
 </template>
 
 <script>
-export default {
-  name: 'ResumePreview',
-  computed: {
-    resume () {
-      return this.$store.state.resume
+  export default {
+    name: 'ResumePreview',
+    computed: {
+      resume () {
+        return this.$store.state.resume
+      }
     }
   }
-}
-
 </script>
 
 <style>
-  #resumePreview {
-    color: blue;
+  #resumePreview{
+    background:white;
+    box-shadow:0 1px 3px 0 rgba(0,0,0,0.25);
+    padding: 2em;
+    color: #333;
+    line-height: 1.2;
+    * {
+      box-sizing: border-box;
+      font-variant: normal;
+      font-weight: normal;
+    }
+    ol{
+      list-style: none;
+    }
+    section + section{
+      margin-top: 2em;
+    }
+    p{
+      white-space: pre-line;
+    }
+    section {
+      > h2:first-child{
+        background: #ddd;
+        display: inline-block;
+        padding: .2em;
+        margin-bottom: .5em;
+      }
+    }
+    section[data-name="personal_info"]{
+      > h1{
+        margin: .1em 0;
+        font-size: 4em;
+      }
+    }
+    section[data-name="work_history"]{
+      li + li {
+        margin-top: 1em;
+      }
+      li {
+        h3{
+          border-bottom: 1px solid #999;
+          padding-bottom: .3em;
+          margin-bottom: .3em;
+        }
+      }
+    }
+    section[data-name="education"]{
+      li{
+        line-height: 1.5;
+      }
+    }
   }
 </style>
