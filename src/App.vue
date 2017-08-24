@@ -1,4 +1,5 @@
 
+<script src="store/index.js"></script>
 <template>
   <div class=page>
     <header>
@@ -20,16 +21,13 @@
   import Vue from 'vue'
   import ElementUI from 'element-ui'
   import 'element-ui/lib/theme-default/index.css'
+  import store from './store/index.js'
 
   Vue.use(ElementUI)
 
   export default {
     name: 'app',
-    data: function () {
-      return {
-        text: '你好'
-      }
-    },
+    store,
     components: {Topbar, ResumeEditor, ResumePreview}
   }
 </script>
@@ -40,11 +38,10 @@
     flex-direction: column;
     >main{
       flex-grow: 1;
-    }
-    >main{
       min-width: 1024px;
       max-width: 1440px;
-      margin: 0;
+      margin-top: 16px;
+      margin-bottom: 16px;
       display: flex;
       justify-content: space-around;
     }

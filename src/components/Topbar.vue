@@ -1,3 +1,4 @@
+
 <template>
   <div id="topbar">
     <div class="wrapper">

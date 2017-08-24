@@ -28,7 +28,6 @@
           <input type="text" v-model="resume[item][key]">
         </div>
       </li>
-
     </ol>
   </div>
 </template>
@@ -36,28 +35,22 @@
 <script>
   export default {
     name: 'ResumeEditor',
-    data () {
+    data: function () {
       return {
-        selected: 'personal_info',
-        icon_tags: ['Id', 'work', 'study', 'project', 'reward', 'Id', 'Id', 'Id'],
-        resume: {
-          displayItems: ['personal_info', 'work_history', 'education', 'projects', 'awards', 'contacts', 'others'],
-          personal_info: {
-            name: '',
-            city: '',
-            title: ''
-          },
-          work_history: [
-            {company: 'aaa', content: 'aaaaa'},
-            {company: 'bbb', content: 'bbbbb'},
-            {company: 'ccc', content: 'ccccc'}
-          ],
-          education: ['test', 'test', 'test'],
-          projects: ['test', 'test', 'test'],
-          awards: [],
-          contacts: [],
-          others: []
+        icon_tags: ['Id', 'work', 'study', 'project', 'reward', 'Id', 'Id', 'Id']
+      }
+    },
+    computed: {
+      selected: {
+        get () {
+          return this.$store.state.selected
+        },
+        set (value) {
+          return this.$store.commit('switchTab', value)
         }
+      },
+      resume () {
+        return this.$store.state.resume
       }
     }
   }
