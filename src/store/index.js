@@ -34,9 +34,12 @@ export default new Vuex.Store({
       state.selected = payload
     },
     updateResumeArray (state, {field, index, subfield, value}) {
-      console.log('updateResume called')
+      console.log('updateResumeArray called')
       console.log(index)
       state.resume[field][index][subfield] = value
+    },
+    updateResumeItem (state, {field, subfield, value}) {
+      state.resume[field][subfield] = value
     }
   }
 })
