@@ -32,6 +32,11 @@ export default new Vuex.Store({
   mutations: {
     switchTab (state, payload) {
       state.selected = payload
+    },
+    updateResumeArray (state, {field, index, subfield, value}) {
+      console.log('updateResume called')
+      console.log(index)
+      state.resume[field][index][subfield] = value
     }
   }
 })

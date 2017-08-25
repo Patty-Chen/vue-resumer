@@ -15,10 +15,10 @@
     <ol class="panels">
       <li v-for="(item,index) in resume.displayItems" v-show="item === selected">
         <div v-if="resume[item] instanceof(Array)">
-          <div class="subitem" v-for="subitem in resume[item]">
+          <div class="subitem" v-for="(subitem,subIndex) in resume[item]">
             <div class="resumeField" v-for="(value,key) in subitem">
               <label> {{key}} </label>
-              <input type="text" :value="value">
+              <input type="text" :value="value" @input="changeResumeArray(item,subIndex, key, $event.target.value)">
             </div>
             <hr>
           </div>
@@ -51,6 +51,16 @@
       },
       resume () {
         return this.$store.state.resume
+      }
+    },
+    methods: {
+      changeResumeArray (field, index, subfield, value) {
+        this.$store.commit('updateResumeArray', {
+          field,
+          index,
+          subfield,
+          value
+        })
       }
     }
   }
