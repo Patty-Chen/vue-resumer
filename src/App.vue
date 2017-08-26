@@ -1,5 +1,3 @@
-
-<script src="store/index.js"></script>
 <template>
   <div class=page>
     <header>
@@ -22,6 +20,7 @@
   import ElementUI from 'element-ui'
   import 'element-ui/lib/theme-default/index.css'
   import store from './store/index.js'
+  import getAVUser from './lib/getAVUser.js'
 
   Vue.use(ElementUI)
 
@@ -35,6 +34,7 @@
         state = JSON.parse(state)
       }
       this.$store.commit('initState', state)
+      this.$store.commit('setUser', getAVUser())
     }
   }
 </script>

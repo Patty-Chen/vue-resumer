@@ -1,13 +1,13 @@
 <template>
   <div>
-    <form @submit.prevent="signUp">
+    <form @submit.prevent="login">
       <div class="row">
         <label>用户名</label>
-        <input type="text" v-model="formData.username">
+        <input type="text" required v-model="formData.username">
       </div>
       <div class="row">
-        <label >密码</label>
-        <input type="password" v-model="formData.password">
+        <label>密码</label>
+        <input type="password" required v-model="formData.password">
       </div>
       <div class="actions">
         <input type="submit" value="提交">
@@ -20,23 +20,21 @@
   import AV from '../lib/leancloud'
   import getAVUser from '../lib/getAVUser'
   export default {
-    name: 'SignUpForm',
+    name: 'LogInForm',
     data () {
       return {
         formData: {
           username: '',
           password: ''
-        }
+        },
+        errorMessage: ''
       }
     },
     methods: {
-      signUp () {
+      login () {
         let {username, password} = this.formData
-        var user = new AV.User()
-        user.setUsername(username)
-        user.setPassword(password)
-        user.signUp().then((loginedUser) => {
-          this.$emit('success', getAVUser())
+        AV.User.logIn(username, password).then(() => {
+          this.$store.commit('setUser', getAVUser())
         }, (error) => {
           alert(JSON.stringify(error))
         })
