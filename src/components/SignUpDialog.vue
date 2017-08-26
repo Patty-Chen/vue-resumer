@@ -14,7 +14,7 @@
 
 <script>
   export default {
-    name: 'MyDialog',
+    name: 'SignUpDialog',
     props: ['title', 'visible'],
     methods: {
       close () {

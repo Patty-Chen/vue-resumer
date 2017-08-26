@@ -4,9 +4,10 @@
     <div class="wrapper">
       <span class="logo">Resumer</span>
       <div class="actions">
+        <span>{{user}}</span>
         <a class="button primary" href="#" @click.prevent="signUpDialogVisible = true">注册</a>
         <SignUpDialog title="注册" :visible="signUpDialogVisible" @close="signUpDialogVisible = false">
-          我就是 slot 内容
+          <SignUpForm @success="login($event)"/>
         </SignUpDialog>
         <a class="button" href="#">登录</a>
         <el-button type="primary">保存</el-button>
@@ -18,6 +19,7 @@
 
 <script>
   import SignUpDialog from './SignUpDialog'
+  import SignUpForm from './SignUpForm'
   export default {
     name: 'Topbar',
     data () {
@@ -25,8 +27,19 @@
         signUpDialogVisible: false
       }
     },
+    computed: {
+      user () {
+        return this.$store.state.user
+      }
+    },
     components: {
-      SignUpDialog
+      SignUpDialog, SignUpForm
+    },
+    methods: {
+      login (user) {
+        this.signUpDialogVisible = false
+        this.$store.commit('setUser', user)
+      }
     }
   }
 </script>

@@ -6,6 +6,10 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     selected: 'personal_info',
+    user: {
+      id: '',
+      username: ''
+    },
     resume: {
       displayItems: ['personal_info', 'work_history', 'education', 'projects', 'awards', 'contacts', 'others'],
       personal_info: {
@@ -46,6 +50,10 @@ export default new Vuex.Store({
     updateResumeItem (state, {field, subfield, value}) {
       state.resume[field][subfield] = value
       localStorage.setItem('state', JSON.stringify(state))
+    },
+    setUser (state, payload) {
+      Object.assign(state.user, payload)
+      console.log(state.user)
     }
   }
 })
