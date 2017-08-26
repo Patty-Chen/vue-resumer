@@ -4,6 +4,11 @@
     <div class="wrapper">
       <span class="logo">Resumer</span>
       <div class="actions">
+        <a class="button primary" href="#" @click.prevent="signUpDialogVisible = true">注册</a>
+        <SignUpDialog title="注册" :visible="signUpDialogVisible" @close="signUpDialogVisible = false">
+          我就是 slot 内容
+        </SignUpDialog>
+        <a class="button" href="#">登录</a>
         <el-button type="primary">保存</el-button>
         <el-button>预览</el-button>
       </div>
@@ -12,8 +17,17 @@
 </template>
 
 <script>
+  import SignUpDialog from './SignUpDialog'
   export default {
-    name: 'Topbar'
+    name: 'Topbar',
+    data () {
+      return {
+        signUpDialogVisible: false
+      }
+    },
+    components: {
+      SignUpDialog
+    }
   }
 </script>
 
