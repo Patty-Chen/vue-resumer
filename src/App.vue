@@ -28,7 +28,14 @@
   export default {
     name: 'app',
     store,
-    components: {Topbar, ResumeEditor, ResumePreview}
+    components: {Topbar, ResumeEditor, ResumePreview},
+    created () {
+      let state = localStorage.getItem('state')
+      if (state) {
+        state = JSON.parse(state)
+      }
+      this.$store.commit('initState', state)
+    }
   }
 </script>
 <style lang="scss">

@@ -30,16 +30,22 @@ export default new Vuex.Store({
     }
   },
   mutations: {
+    initState (state, payload) {
+      Object.assign(state, payload)
+    },
     switchTab (state, payload) {
       state.selected = payload
+      localStorage.setItem('state', JSON.stringify(state))
     },
     updateResumeArray (state, {field, index, subfield, value}) {
       console.log('updateResumeArray called')
       console.log(index)
       state.resume[field][index][subfield] = value
+      localStorage.setItem('state', JSON.stringify(state))
     },
     updateResumeItem (state, {field, subfield, value}) {
       state.resume[field][subfield] = value
+      localStorage.setItem('state', JSON.stringify(state))
     }
   }
 })
