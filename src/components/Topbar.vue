@@ -53,6 +53,8 @@
       login (user) {
         this.signUpDialogVisible = false
         this.loginDialogVisible = false
+        console.log('login')
+        console.log(user)
         this.$store.commit('setUser', user)
       },
       logout () {

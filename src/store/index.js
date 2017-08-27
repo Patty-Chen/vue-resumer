@@ -61,11 +61,12 @@ export default new Vuex.Store({
       console.log(value)
     },
     setUser (state, payload) {
+      console.log(payload)
       Object.assign(state.user, payload)
-      console.log(state.user)
     },
     removeUser (state) {
-      state.user.id = null
+      state.user.id = ''
+      state.user.username = ''
     }
   }
 })
