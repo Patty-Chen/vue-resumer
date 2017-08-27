@@ -10,6 +10,12 @@ export default new Vuex.Store({
       id: '',
       username: ''
     },
+    model: {
+      work_history: {company: '', content: ''},
+      education: {school: '', content: ''},
+      projects: {name: '', content: ''},
+      awards: {name: '', content: ''}
+    },
     resume: {
       displayItems: ['personal_info', 'work_history', 'education', 'projects', 'awards', 'contacts'],
       personal_info: {
@@ -67,6 +73,11 @@ export default new Vuex.Store({
     removeUser (state) {
       state.user.id = ''
       state.user.username = ''
+    },
+    addItem (state, payload) {
+      let obj = {}
+      Object.assign(obj, state.model[payload.field])
+      state.resume[payload.field].push(obj)
     }
   }
 })

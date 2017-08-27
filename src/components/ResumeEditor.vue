@@ -22,6 +22,7 @@
             </div>
             <hr>
           </div>
+          <el-button type="primary" v-on:click="addItem(item)">添加</el-button>
         </div>
         <div v-else class="resumeField" v-for="(value,key) in resume[item]">
           <label> {{key}} </label>
@@ -68,8 +69,13 @@
           subfield,
           value
         })
+      },
+      addItem (field) {
+        console.log('click')
+        this.$store.commit('addItem', {
+          field
+        })
       }
-
     }
   }
 </script>
