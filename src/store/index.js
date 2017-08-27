@@ -24,23 +24,10 @@ export default new Vuex.Store({
         title: '',
         birthday: ''
       },
-      work_history: [
-        {company: 'aaa', content: 'aaaaa'},
-        {company: 'bbb', content: 'bbbbb'},
-        {company: 'ccc', content: 'ccccc'}
-      ],
-      education: [
-        {school: 'aaa', content: 'aaaaa'},
-        {school: 'bbb', content: 'bbbbb'}
-      ],
-      projects: [
-        {name: 'aaa', content: 'aaaaa'},
-        {name: 'bbb', content: 'bbbbb'}
-      ],
-      awards: [
-        {name: 'aaa', content: 'aaaaa'},
-        {name: 'aaa', content: 'aaaaa'}
-      ],
+      work_history: [],
+      education: [],
+      projects: [],
+      awards: [],
       contacts: {
         mobile: '111',
         email: '222'
