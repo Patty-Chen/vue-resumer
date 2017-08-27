@@ -20,6 +20,7 @@
               <label> {{key}} </label>
               <input type="text" :value="value" @input="changeResumeArray(item, subIndex, key, $event.target.value)">
             </div>
+            <el-button v-on:click="deleteItem(item,subIndex)">删除</el-button>
             <hr>
           </div>
           <el-button type="primary" v-on:click="addItem(item)">添加</el-button>
@@ -74,6 +75,15 @@
         console.log('click')
         this.$store.commit('addItem', {
           field
+        })
+      },
+      deleteItem (field, subfield) {
+        console.log('delete')
+        console.log(field)
+        console.log(subfield)
+        this.$store.commit('deleteItem', {
+          field,
+          subfield
         })
       }
     }

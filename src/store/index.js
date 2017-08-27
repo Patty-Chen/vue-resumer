@@ -65,6 +65,9 @@ export default new Vuex.Store({
       let obj = {}
       Object.assign(obj, state.model[payload.field])
       state.resume[payload.field].push(obj)
+    },
+    deleteItem (state, payload) {
+      state.resume[payload.field].splice(payload.subfield, 1)
     }
   }
 })
