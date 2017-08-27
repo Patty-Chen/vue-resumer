@@ -33,6 +33,38 @@
       </ol>
     </section>
 
+    <section data-name="education" v-show="resume.projects">
+      <h2>项目经历</h2>
+      <ol>
+        <li v-for="item in resume.projects">
+          <h3>{{item.name}}
+            <span v-show="item.content"> - {{item.content}} </span>
+          </h3>
+        </li>
+      </ol>
+    </section>
+
+    <section data-name="education" v-show="resume.awards">
+      <h2>获奖情况</h2>
+      <ol>
+        <li v-for="item in resume.awards">
+          <h3>{{item.name}}
+            <span v-show="item.content"> - {{item.content}} </span>
+          </h3>
+        </li>
+      </ol>
+    </section>
+
+    <section v-show="resume.contacts">
+      <h2>联系方式</h2>
+      <ol>
+        <li v-for="(value, key) in resume.contacts">
+          <h3>{{key}}
+            <span v-show="value"> - {{value}} </span>
+          </h3>
+        </li>
+      </ol>
+    </section>
   </div>
 </template>
 
@@ -99,5 +131,6 @@
         line-height: 1.5;
       }
     }
+
   }
 </style>

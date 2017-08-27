@@ -36,8 +36,8 @@ export default new Vuex.Store({
         {name: 'aaa', content: 'aaaaa'}
       ],
       contacts: {
-        mobile: '',
-        email: ''
+        mobile: '111',
+        email: '222'
       }
     }
   },
@@ -58,6 +58,7 @@ export default new Vuex.Store({
     updateResumeItem (state, {field, subfield, value}) {
       state.resume[field][subfield] = value
       localStorage.setItem('state', JSON.stringify(state))
+      console.log(value)
     },
     setUser (state, payload) {
       Object.assign(state.user, payload)
