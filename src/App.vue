@@ -51,6 +51,8 @@
       margin-bottom: 16px;
       display: flex;
       justify-content: space-around;
+      width: 100%;
+      align-self: center;
     }
   }
   #resumeEditor{

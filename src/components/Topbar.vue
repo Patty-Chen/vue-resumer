@@ -6,14 +6,14 @@
       <div class="actions">
         <div v-if="logined" class="userActions">
           <span>你好，{{user.username}}</span>
-          <a class="button" href="#" @click.prevent="logout">登出</a>
+          <el-button @click.prevent="logout">登出</el-button>
         </div>
         <div v-else class="userActions">
-          <a class="button primary" href="#" @click.prevent="signUpDialogVisible = true">注册</a>
+          <el-button @click.prevent="signUpDialogVisible = true">注册</el-button>
           <SignUpDialog title="注册" :visible="signUpDialogVisible" @close="signUpDialogVisible = false">
             <SignUpForm @success="login($event)"/>
           </SignUpDialog>
-          <a class="button" href="#" @click.prevent="loginDialogVisible = true">登录</a>
+          <el-button @click.prevent="loginDialogVisible = true">登录</el-button>
           <SignUpDialog title="登录" :visible="loginDialogVisible" @close="loginDialogVisible = false">
             <LoginForm @success="login($event)"/>
           </SignUpDialog>
@@ -65,23 +65,22 @@
   }
 </script>
 
-<style>
+<style lang="scss">
   #topbar{
     background:#ffffff;
-    /*box-shadow:0 1px 3px 0 rgba(0,0,0,0.25);*/
+    box-shadow:0 1px 3px 0 rgba(0,0,0,0.25);
     >.wrapper{
       min-width: 1024px;
       max-width: 1440px;
       margin: 0 auto;
+      padding: 0 16px;
       height:64px;
-    }
-    >.wrapper{
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    .logo {
-      font-size: 24px;
+    .logo{
+      font-size: 40px;
       color: #000000;
     }
   }
