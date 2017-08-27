@@ -11,7 +11,7 @@ export default new Vuex.Store({
       username: ''
     },
     resume: {
-      displayItems: ['personal_info', 'work_history', 'education', 'projects', 'awards', 'contacts', 'others'],
+      displayItems: ['personal_info', 'work_history', 'education', 'projects', 'awards', 'contacts'],
       personal_info: {
         name: '',
         city: '',
@@ -27,10 +27,18 @@ export default new Vuex.Store({
         {school: 'aaa', content: 'aaaaa'},
         {school: 'bbb', content: 'bbbbb'}
       ],
-      projects: ['test', 'test', 'test'],
-      awards: [],
-      contacts: [],
-      others: []
+      projects: [
+        {name: 'aaa', content: 'aaaaa'},
+        {name: 'bbb', content: 'bbbbb'}
+      ],
+      awards: [
+        {name: 'aaa', content: 'aaaaa'},
+        {name: 'aaa', content: 'aaaaa'}
+      ],
+      contacts: {
+        mobile: '',
+        email: ''
+      }
     }
   },
   mutations: {

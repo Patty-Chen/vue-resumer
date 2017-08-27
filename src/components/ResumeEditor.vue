@@ -37,7 +37,7 @@
     name: 'ResumeEditor',
     data: function () {
       return {
-        icon_tags: ['Id', 'work', 'study', 'project', 'reward', 'Id', 'Id', 'Id']
+        icon_tags: ['Id', 'work', 'study', 'project', 'reward', 'phone']
       }
     },
     computed: {
