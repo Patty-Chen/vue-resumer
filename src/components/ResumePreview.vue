@@ -86,6 +86,7 @@
     padding: 2em;
     color: #333;
     line-height: 1.2;
+    overflow: auto;
     * {
       box-sizing: border-box;
       font-variant: normal;
@@ -116,7 +117,7 @@
     }
     section[data-name="work_history"]{
       li + li {
-        margin-top: 1em;
+        margin-top: 2em;
       }
       li {
         h3{
