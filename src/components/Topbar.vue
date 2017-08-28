@@ -18,8 +18,6 @@
             <LoginForm @success="login($event)"/>
           </SignUpDialog>
         </div>
-        <el-button type="primary">保存</el-button>
-        <el-button>预览</el-button>
       </div>
     </div>
   </div>
