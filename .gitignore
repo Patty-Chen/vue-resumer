@@ -6,9 +6,7 @@ yarn-error.log*
 .editorconfig
 .eslintignore
 .eslintrc.js
-.postcssrc.js
-.babelrc
-package-lock.json
+
 # Editor directories and files
 .idea
 *.suo
