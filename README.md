@@ -2,20 +2,14 @@
 
 > A Vue.js project
 
-## Build Setup
+实现内容：
 
-``` bash
-# install dependencies
-npm install
+在线简历编辑器，支持预览功能
 
-# serve with hot reload at localhost:8080
-npm run dev
+使用技术：
 
-# build for production with minification
-npm run build
+vue.js  elementUI  scss  es6  vue-cli  vuex  vue-router..
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
+学习收获：
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+vue.js框架原理，vue组件, 组件通信，elementUI的使用
